@@ -23,27 +23,27 @@ pip install -r requirements.txt
 
 ## 환경 변수 설정
 `.env` 파일에 아래와 같이 인증 정보 및 실행 옵션을 입력합니다.
+
+IP와 MAC 주소는 윈도우에서 `ipconfig /all` 명령어를 통해 확인할 수 있습니다.
+
+또는 인증이 만료된 후에 웹 브라우저로 인터넷 사용시 자동 접속되는
+인증 웹페이지(`https://121.67.201.63/gnauth/usr?SRCIP={IP-ADDRESS}&SMAC={MAC-ADDRESS}`)에서 확인할 수 있습니다.
 ```env
 ip_address="192.168.x.x"
 mac_address="XX:XX:XX:XX:XX:XX"
-user_id="인증_아이디"
-user_pw="인증_비밀번호"
+user_id="swing_id"
+user_pw="swing_password"
 headless="true" # UI 없이 백그라운드에서 실행하려면 "true", 화면을 확인하려면 "false"
 ```
 
 ## 실행 방법
-
-번들된 로컬 드라이버 사용:
+(번들된 로컬 드라이버 사용)
 ```bash
 python auto_auth.py
 ```
 
-`webdriver_manager` 자동 드라이버 사용:
-```bash
-python new_auto_auth.py
-```
 
 스크립트는 1회 인증 완료 후 5분 단위로 대기 및 재시작하여 인증 상태를 유지합니다.
 
-## 라이선스
+## License
 MIT License
